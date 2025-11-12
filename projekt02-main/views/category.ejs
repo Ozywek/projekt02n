@@ -1,0 +1,22 @@
+<%- include("head.partial.ejs") %>
+
+<main>
+  <h1><%= title %></h1>
+
+  <ul id="cards">
+    <% category.cards.forEach(function(card){ %>
+      <li>
+        <strong><%= card.dishname %></strong> - <%= card.dishtime %> <br/>
+        <em>Składniki:</em> <%= card.ingredients %> <br/>
+        <em>Przepis:</em> <%= card.recipie %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <div>
+    <h3>Nowy przepis</h3>
+    <%- include("forms/new_recipe.ejs") %>
+  </div>
+</main>
+
+<%- include("foot.partial.ejs") %>
